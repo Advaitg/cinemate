@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { Link } from "react-router-dom"
-import  PageNotFoundImage  from "../assets/PageNotFound.jpg"
+import  PageNotFoundImage  from "../../public/images/PageNotFoundImage"
 import { Button } from "../component"
 
 export const PageNotFound = () => {

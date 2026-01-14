@@ -5,7 +5,14 @@ export default {
   ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      screens : {
+        "other": {'min': '340px', 'max': '1280px'}
+      },
+      colors: {
+        "darkbg" : "#1e293b"
+      }
+    },
   },
   plugins: [],
 }

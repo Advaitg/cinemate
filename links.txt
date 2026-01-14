@@ -5,7 +5,7 @@ Upcoming: https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1
 Popular:  https://api.themoviedb.org/3/movie/popular?language=en-US&page=1
 Top:      https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1
 Now Playing: https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1
-Search:   https://api.themoviedb.org/3/search/keyword?page=1
+Search:      https://api.themoviedb.org/3/search/keyword?language=en-US&page=1
 
 const options = {
   method: 'GET',
@@ -19,3 +19,16 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', op
   .then(res => res.json())
   .then(res => console.log(res))
   .catch(err => console.error(err));
+
+
+
+const options = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNGRjZTZmNmYxZDdlMGE0MjQzMmI3YTg3ZGExOWM4MyIsIm5iZiI6MTc2NzUzOTg4MC4wMjcsInN1YiI6IjY5NWE4NGE4MGE2YjZmYjM5ZDNiZTJlNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.WNXUPUtZIjC-YOgcvM5rdffTkRHfSG0gEQTjd9yrXIo'
+  }
+};
+
+const response = await fetch('https://api.themoviedb.org/3/search/keyword?query=lost&page=1', options)
+const data = await response.json()
